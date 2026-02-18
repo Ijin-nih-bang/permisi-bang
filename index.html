@@ -1,11 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Web Bang Roby</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hadiah Spesial Untukmu!</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: white;
+            font-family: sans-serif;
+        }
+
+        /* Tampilan Pancingan */
+        #pancingan {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            background: #f0f0f0;
+        }
+
+        .tombol {
+            background: #ff4757;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 22px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Gambar Jumpscare Full Layar */
+        #gambarJumpscare {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('setan.jpg'); /* GANTI DENGAN NAMA FILE KAMU */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
-    <h1>BUMI GONJANG GANJING 
-        LANGIT KELAP KELIP.</h1>
-    <p>KENALIN INI MUHAMAD IMRON IKSANUDIN, SENGGOL DONG BOSS</p>
+
+    <div id="pancingan">
+        <h1>🎁 Anda Mendapat Hadiah!</h1>
+        <p>Klik tombol di bawah untuk melihat hadiahnya:</p>
+        <button class="tombol" onclick="tampilKaget()">BUKA HADIAH</button>
+    </div>
+
+    <div id="gambarJumpscare"></div>
+
+    <audio id="suaraKaget">
+        <source src="suara.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function tampilKaget() {
+            var gmb = document.getElementById("gambarJumpscare");
+            var pancing = document.getElementById("pancingan");
+            var audio = document.getElementById("suaraKaget");
+
+            // Munculkan gambar, sembunyikan tombol
+            pancing.style.display = "none";
+            gmb.style.display = "block";
+
+            // Putar suara kalau kamu upload file suara.mp3
+            audio.play();
+
+            // Paksa Fullscreen
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            }
+        }
+    </script>
+
 </body>
 </html>
