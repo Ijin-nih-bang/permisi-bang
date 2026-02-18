@@ -1,92 +1,96 @@
-<!DOCTYPE html>
-<html lang="id">
+
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <link href="https://htmlku.com/kamumau/style.css" rel="stylesheet" type="text/css" />
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hadiah Spesial Untukmu!</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: white;
-            font-family: sans-serif;
-        }
-
-        /* Tampilan Pancingan */
-        #pancingan {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            text-align: center;
-            background: #f0f0f0;
-        }
-
-        .tombol {
-            background: #ff4757;
-            color: white;
-            padding: 20px 40px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 22px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Gambar Jumpscare Full Layar */
-        #gambarJumpscare {
-            display: none;
-            width: 100vw;
-            height: 100vh;
-            background-image: url('faku.jpg'); /* GANTI DENGAN NAMA FILE KAMU */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-        }
-    </style>
+  <title>Script HTML buat Kamu</title>
+  <meta name="description" content="@feelthisray - Script HTML by feeldream.id">
 </head>
 <body>
+	
+   <div id="bodyblur">
+     <!-- Wallpaper / Background --><img src="https://feeldreams.github.io/pics/awan/2.jpg" id="wallpaper"/>
+   </div>
+  
+  <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/pandapanah.gif" id="stiker1"/>
+         <img src="https://feeldreams.github.io/cilukba.gif" id="stiker2"/>
+         <img src="https://feeldreams.github.io/smprt.gif" id="stiker3"/>
+         <img src="https://feeldreams.github.io/gumush.gif" id="stiker4"/>
+         <img src="https://feeldreams.github.io/" id="stiker5"/>
+  </div>
 
-    <div id="pancingan">
-        <h1>🎁 Anda Mendapat Hadiah!</h1>
-        <p>Klik tombol di bawah untuk melihat hadiahnya:</p>
-        <button class="tombol" onclick="tampilKaget()">BUKA HADIAH</button>
+   <div id='Content'>
+   	
+     <div id="suratin" onClick="memulai();audio.play();">
+       <!-- Surat --><img src="https://rayyscoding.github.io/envelope.png"/>
+     </div>
+     <p id="ket">Klik Suratnya!</p>
+   
+     <div>
+      <!-- Foto Akhir -->
+      <img src="https://feeldreams.github.io/pusn.gif" id="fotoakhir" />
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotoakhir2" />
+    </div>
+     <div><blockquote id='bq'>
+       <p id="kalimat"></p>
+       <p id="kalimatc"></p>
+     </blockquote></div>
+   
+     <!-- Tombol -->
+     <div id="Tombol">
+      <a id="By" onClick="fungsimau()">Mau</a>
+      <a id="Bn" onClick="btn='Bn';fungsibaru(btn)">Gamau!</a>
     </div>
 
-    <div id="gambarJumpscare"></div>
+    <!-- Pesan Ditolak -->
+    <div class="sembunyi">
+      <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
+      <span id="kataditolak">Harus Mau yaa 😝</span>
+    </div>
+     
+   </div>
 
-    <audio id="suaraKaget">
-        <source src="suara.mp3" type="audio/mpeg">
-    </audio>
+<script src="https://htmlku.com/kamumau/script.js"></script>
 
-    <script>
-        function tampilKaget() {
-            var gmb = document.getElementById("gambarJumpscare");
-            var pancing = document.getElementById("pancingan");
-            var audio = document.getElementById("suaraKaget");
+<script type="text/javascript">
+       async function pertama(){
+         audio = new Audio('https://feeldreams.github.io/almostday.mp3');setTimeout(showDiv,100);
+       } pertama();
+	
+       
+       async function pesan(){
+             	await swalst.fire({
+                  title: 'Alooo kamuuu! 😍', 
+                  imageUrl: '' + stiker1.src,
+                  });   	
+                 await swalst.fire({
+                  title: 'Gimana Puasanya? Masih<br>Kuat, kan? 🫣',
+                  imageUrl: '' + stiker2.src,
+                  });
+                 await swalst.fire({
+                  title: 'Tahan Aja, Ga<br>Lama Lagi Kok.. 😋',
+                  imageUrl: '' + stiker3.src,
+                  });
+                  await swalst.fire({
+                  title: 'Oh ya, Aku Mau Ngajak<br>Kamu Sesuatu Nih 🫣',
+                  imageUrl: '' + stiker4.src,
+                  });
+                  
+                  katangetik = "<b class='usefont2'>Kamu Mau Gak<br>Ngabuburit Sama Aku? 😆</b>";
+                  katangetik2 = "<b class='usefont'>Makasii udah mau <br>ngabuburit sama aku 😆🙏<br><br>Ditunggu yaa wkwk 🫣😋😝</b>";
+                  ktbwh2 = "Tetap Sama Aku Terus yaa ❤️";
+                  ktbwh3 = "Aku Sayang Kamu 💐🤍🫶";
 
-            // Munculkan gambar, sembunyikan tombol
-            pancing.style.display = "none";
-            gmb.style.display = "block";
-
-            // Putar suara kalau kamu upload file suara.mp3
-            audio.play();
-
-            // Paksa Fullscreen
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
+                  kataditerima = "<b class='usefont2'>Yeaayy! 😍</b>";
+                  
+                  pesanwhatsapp = "ilvyou too 💞🤍💝❣️";
+                 setTimeout(kpemb,200);
             }
-        }
-    </script>
-
+</script>
 </body>
 </html>
